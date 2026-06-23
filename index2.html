@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>涂美珠｜個人網站</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 18px;
+    }
+
+    .hero {
+      padding: 80px 8%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      background: linear-gradient(135deg, #dbeafe, #fff);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #1e3a8a;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.18);
+    }
+
+    main {
+      width: 84%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    section {
+      background: #fff;
+      padding: 32px;
+      margin-bottom: 28px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(15,23,42,.08);
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    article {
+      background: #f8fafc;
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+    }
+
+    dir {
+      list-style-position: inside;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: #1e3a8a;
+      color: white;
+    }
+
+    th,
+    td {
+      border: 1px solid #dbe3ef;
+      padding: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      width: auto;
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      cursor: pointer;
+    }
+
+    input[type="submit"] {
+      background: #1d4ed8;
+    }
+
+    input[type="reset"] {
+      background: #64748b;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 28px;
+    }
+
+    @media (max-width: 900px) {
+      header,
+      .hero {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>涂美珠</h1>
+
+    <nav>
+      <a href="#about">關於我</a>
+      <a href="#skills">技能</a>
+      <a href="#works">作品</a>
+      <a href="#profile">資料</a>
+      <a href="#contact">聯絡</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <article>
+      <h2>個人網站｜HTML5 練習</h2>
+      <h3>歡迎來到我的網站</h3>
+
+      <p>
+        這是一個使用 HTML5 語意化標籤製作的個人網頁。<br>
+        包含 header、nav、main、section、article、footer 等結構。
+      </p>
+
+      <a href="#contact">聯絡我</a>
+    </article>
+
+    <figure>
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600" alt="個人形象照片">
+      <figcaption>個人形象照片</figcaption>
+    </figure>
+  </section>
+
+  <main>
+
+    <section id="about">
+      <h2>關於我</h2>
+      <h3>個人簡介</h3>
+      <h4>學習方向</h4>
+      <h5>目前目標</h5>
+      <h6>持續進步中</h6>
+
+      <p>
+        我正在學習 HTML5、CSS 與網頁排版設計，希望能完成一個完整的個人作品網站。
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>我的技能</h2>
+
+      <dir class="grid">
+        <li>HTML5 語意化結構</li>
+        <li>CSS 網頁排版</li>
+        <li>表格與表單設計</li>
+      </dir>
+    </section>
+
+    <section id="works">
+      <h2>作品展示</h2>
+
+      <div class="grid">
+        <article>
+          <h3>個人網頁</h3>
+          <p>使用 HTML5 製作基本個人網站。</p>
+          <a href="#">查看作品</a>
+        </article>
+
+        <article>
+          <h3>活動海報</h3>
+          <p>設計活動宣傳與招生海報。</p>
+          <a href="#">查看作品</a>
+        </article>
+
+        <article>
+          <h3>表單練習</h3>
+          <p>建立姓名、Email、留言表單。</p>
+          <a href="#">查看作品</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="profile">
+      <h2>個人資料表</h2>
+
+      <table>
+        <tr>
+          <th>項目</th>
+          <th>內容</th>
+        </tr>
+        <tr>
+          <td>姓名</td>
+          <td>涂美珠</td>
+        </tr>
+        <tr>
+          <td>學習內容</td>
+          <td>HTML5、CSS、表格、表單</td>
+        </tr>
+        <tr>
+          <td>網站連結</td>
+          <td><a href="https://www.google.com" target="_blank">我的連結</a></td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>聯絡我</h2>
+
+      <form action="#" method="post">
+        <p>
+          <label for="name">姓名</label><br>
+          <input type="text" id="name" name="name" placeholder="請輸入姓名">
+        </p>
+
+        <p>
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="email" placeholder="請輸入 Email">
+        </p>
+
+        <p>
+          <label for="message">留言內容</label><br>
+          <textarea id="message" name="message" rows="5" placeholder="請輸入留言"></textarea>
+        </p>
+
+        <input type="submit" value="送出">
+        <input type="reset" value="清除">
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 涂美珠｜HTML5 個人網站</p>
+  </footer>
+
+</body>
+</html>
