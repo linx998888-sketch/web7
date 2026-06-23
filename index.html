@@ -3,266 +3,431 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>個人網頁 | Personal Website</title>
+  <title>美珠｜個人網頁</title>
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, "Microsoft JhengHei", sans-serif;
-      background-color: #f4f7fb;
-      color: #222;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f7fb;
+      color: #333;
       line-height: 1.8;
     }
 
-    header {
-      background-color: #1f3c88;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    nav {
-      background-color: #162447;
-      text-align: center;
-      padding: 12px;
-    }
-
-    nav a {
-      color: white;
+    a {
+      color: #2563eb;
       text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
     }
 
-    nav a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    main {
-      width: 90%;
-      max-width: 1000px;
-      margin: 30px auto;
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #0f172a;
+      color: #fff;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    section {
-      background-color: white;
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav a {
+      color: #fff;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    .hero {
+      min-height: 520px;
+      padding: 80px 8%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      background: linear-gradient(135deg, #dbeafe, #f8fafc);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 26px;
+      color: #334155;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
       margin-bottom: 24px;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    img {
-      max-width: 250px;
-      border-radius: 12px;
-      display: block;
-      margin: 15px 0;
+    .hero img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1d4ed8;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      margin-right: 10px;
+    }
+
+    .btn-light {
+      background: #fff;
+      color: #1d4ed8;
+      border: 1px solid #1d4ed8;
+    }
+
+    .container {
+      width: 84%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #1e3a8a;
+    }
+
+    .section-title p {
+      color: #64748b;
+    }
+
+    .card {
+      background: #fff;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      margin-bottom: 28px;
+    }
+
+    .about-grid,
+    .work-grid,
+    .skill-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .work-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skill-box,
+    .work-box {
+      background: #f8fafc;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .skill-box h3,
+    .work-box h3 {
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+
+    dir {
+      list-style-position: inside;
+      padding: 0;
+    }
+
+    dir li {
+      margin-bottom: 8px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    th {
+      background: #1e3a8a;
+      color: #fff;
     }
 
     th,
     td {
-      border: 1px solid #ccc;
-      padding: 12px;
+      border: 1px solid #dbe3ef;
+      padding: 14px;
       text-align: left;
     }
 
-    th {
-      background-color: #e8eefc;
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
     }
 
     input,
     textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      border: 1px solid #aaa;
-      border-radius: 6px;
-      box-sizing: border-box;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 16px;
     }
 
     input[type="submit"],
     input[type="reset"] {
       width: auto;
-      background-color: #1f3c88;
-      color: white;
       border: none;
+      color: #fff;
+      background: #1d4ed8;
       cursor: pointer;
-      margin-right: 8px;
-      padding: 10px 20px;
+      padding: 12px 28px;
     }
 
     input[type="reset"] {
-      background-color: #777;
+      background: #64748b;
     }
 
-    footer {
+    .footer {
+      background: #0f172a;
+      color: #fff;
       text-align: center;
-      background-color: #162447;
-      color: white;
-      padding: 20px;
-      margin-top: 30px;
+      padding: 28px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about-grid,
+      .skill-grid,
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Header：網站頁首 -->
-  <header>
-    <h1>我的個人網頁</h1>
-    <p>Personal Website / Front-End Practice</p>
+  <header class="header">
+    <div class="logo">美珠 Personal Web</div>
+
+    <nav class="nav">
+      <a href="#about">關於我</a>
+      <a href="#skills">技能</a>
+      <a href="#works">作品</a>
+      <a href="#profile">資料</a>
+      <a href="#contact">聯絡</a>
+    </nav>
   </header>
 
-  <!-- Navigation：導覽列，使用 a 超連結 -->
-  <nav>
-    <a href="#about">關於我</a>
-    <a href="#skills">技能</a>
-    <a href="#profile">資料表</a>
-    <a href="#contact">聯絡我</a>
-  </nav>
+  <section class="hero">
+    <div>
+      <h1>涂美珠</h1>
+      <h2>個人網站｜學習作品集</h2>
 
-  <!-- Main：主要內容區 -->
-  <main>
-
-    <!-- h2：主要區塊標題 -->
-    <section id="about">
-      <h2>關於我</h2>
-
-      <!-- h3：次標題 -->
-      <h3>個人簡介</h3>
-
-      <!-- p 段落，br 換行 -->
       <p>
-        大家好，我是美珠。<br>
-        這是一個使用 HTML 與 CSS 製作的個人網頁。<br>
-        我正在學習網頁設計，希望能製作出漂亮又實用的網站。
+        歡迎來到我的個人網頁。<br>
+        這裡記錄我的學習歷程、技能整理、作品展示與聯絡資訊。
       </p>
 
-      <!-- img 圖片標籤 -->
-      <img
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
-        alt="個人形象照片"
-      >
+      <a class="btn" href="#contact">聯絡我</a>
+      <a class="btn btn-light" href="#works">查看作品</a>
+    </div>
 
-      <!-- h4：小標題 -->
-      <h4>學習方向</h4>
-      <p>
-        我目前正在練習 HTML 標籤、CSS 排版與基本網頁結構。
-      </p>
+    <div>
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600" alt="個人形象照片">
+    </div>
+  </section>
 
-      <!-- h5：更小層級標題 -->
-      <h5>推薦網站</h5>
-      <p>
-        學習資源：
-        <a href="https://www.w3schools.com" target="_blank">
-          W3Schools HTML 教學
-        </a>
-      </p>
+  <main class="container">
 
-      <!-- h6：最小標題 -->
-      <h6>這是 h6 最小標題示範</h6>
+    <section id="about" class="card">
+      <div class="section-title">
+        <h2>關於我</h2>
+        <p>About Me</p>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <h3>個人簡介</h3>
+          <p>
+            我正在學習網頁設計與前端基礎，包含 HTML、CSS 與 JavaScript。
+            希望能透過練習，完成具有美感與實用性的個人網站。
+          </p>
+
+          <br>
+
+          <h4>學習目標</h4>
+          <p>建立完整作品集，提升網頁排版與設計能力。</p>
+        </div>
+
+        <div>
+          <h5>我的特色</h5>
+          <p>細心、願意學習、喜歡整理資料與製作清楚的視覺內容。</p>
+
+          <h6>持續進步中</h6>
+          <p>每天練習一點點，累積自己的專業能力。</p>
+        </div>
+      </div>
     </section>
 
-    <!-- dir：舊式清單標籤 -->
-    <section id="skills">
-      <h2>我的技能</h2>
+    <section id="skills" class="card">
+      <div class="section-title">
+        <h2>我的技能</h2>
+        <p>Skills</p>
+      </div>
 
-      <p>以下使用 dir 標籤建立技能清單：</p>
+      <dir class="skill-grid">
+        <li class="skill-box">
+          <h3>HTML</h3>
+          <p>建立網頁標題、段落、圖片、表格與表單結構。</p>
+        </li>
 
-      <dir>
-        <li>HTML 網頁結構設計</li>
-        <li>CSS 視覺排版</li>
-        <li>JavaScript 基礎互動</li>
-        <li>活動海報與簡報製作</li>
+        <li class="skill-box">
+          <h3>CSS</h3>
+          <p>設計顏色、間距、卡片、版面與響應式網頁。</p>
+        </li>
+
+        <li class="skill-box">
+          <h3>JavaScript</h3>
+          <p>製作簡單互動效果，讓網頁更有操作感。</p>
+        </li>
       </dir>
     </section>
 
-    <!-- table：表格 -->
-    <section id="profile">
-      <h2>個人資料表</h2>
+    <section id="works" class="card">
+      <div class="section-title">
+        <h2>作品展示</h2>
+        <p>Portfolio</p>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-box">
+          <h3>個人介紹網頁</h3>
+          <p>使用 HTML 與 CSS 製作基本個人頁面。</p>
+          <a href="#">查看作品</a>
+        </div>
+
+        <div class="work-box">
+          <h3>活動海報設計</h3>
+          <p>設計招生、公告與活動宣傳海報。</p>
+          <a href="#">查看作品</a>
+        </div>
+
+        <div class="work-box">
+          <h3>表單練習</h3>
+          <p>建立姓名、Email 與留言內容表單。</p>
+          <a href="#">查看作品</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" class="card">
+      <div class="section-title">
+        <h2>個人資料表</h2>
+        <p>Profile Table</p>
+      </div>
 
       <table>
         <tr>
-          <th>欄位</th>
+          <th>項目</th>
           <th>內容</th>
         </tr>
-
         <tr>
           <td>姓名</td>
-          <td>美珠</td>
+          <td>涂美珠</td>
         </tr>
-
+        <tr>
+          <td>學習方向</td>
+          <td>HTML、CSS、JavaScript、網頁排版</td>
+        </tr>
         <tr>
           <td>興趣</td>
-          <td>網頁設計、創意手作、活動企劃</td>
+          <td>網頁設計、活動企劃、創意手作、簡報製作</td>
         </tr>
-
         <tr>
-          <td>學習目標</td>
-          <td>完成可上線的個人網站</td>
-        </tr>
-
-        <tr>
-          <td>使用技術</td>
-          <td>HTML、CSS、JavaScript</td>
+          <td>網站連結</td>
+          <td><a href="https://www.google.com" target="_blank">我的網站連結</a></td>
         </tr>
       </table>
     </section>
 
-    <!-- form：表單 -->
-    <section id="contact">
-      <h2>聯絡我</h2>
+    <section id="contact" class="card">
+      <div class="section-title">
+        <h2>聯絡我</h2>
+        <p>Contact Form</p>
+      </div>
 
       <form action="#" method="post">
         <p>
-          <label for="name">姓名：</label><br>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="請輸入姓名"
-            required
-          >
+          <label for="name">姓名</label><br>
+          <input type="text" id="name" name="name" placeholder="請輸入姓名">
         </p>
 
         <p>
-          <label for="email">Email：</label><br>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="請輸入 Email"
-            required
-          >
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="email" placeholder="請輸入 Email">
         </p>
 
         <p>
-          <label for="message">留言內容：</label><br>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="請輸入留言"
-          ></textarea>
+          <label for="message">留言內容</label><br>
+          <textarea id="message" name="message" rows="6" placeholder="請輸入留言"></textarea>
         </p>
 
-        <input type="submit" value="送出">
-        <input type="reset" value="清除">
+        <p>
+          <input type="submit" value="送出">
+          <input type="reset" value="清除">
+        </p>
       </form>
     </section>
 
   </main>
 
-  <!-- Footer：網站頁尾 -->
-  <footer>
-    <p>© 2026 我的個人網頁 All Rights Reserved.</p>
+  <footer class="footer">
+    <p>© 2026 涂美珠 個人網頁 All Rights Reserved.</p>
   </footer>
 
 </body>
