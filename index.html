@@ -2,111 +2,268 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>我的個人網頁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>個人網頁 | Personal Website</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      background-color: #f4f7fb;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    header {
+      background-color: #1f3c88;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    nav {
+      background-color: #162447;
+      text-align: center;
+      padding: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    section {
+      background-color: white;
+      margin-bottom: 24px;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    img {
+      max-width: 250px;
+      border-radius: 12px;
+      display: block;
+      margin: 15px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e8eefc;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      width: auto;
+      background-color: #1f3c88;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-right: 8px;
+      padding: 10px 20px;
+    }
+
+    input[type="reset"] {
+      background-color: #777;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #162447;
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- h1：網站最大標題 -->
-  <h1>我的個人網頁</h1>
+  <!-- Header：網站頁首 -->
+  <header>
+    <h1>我的個人網頁</h1>
+    <p>Personal Website / Front-End Practice</p>
+  </header>
 
-  <!-- h2：主要區塊標題 -->
-  <h2>關於我</h2>
+  <!-- Navigation：導覽列，使用 a 超連結 -->
+  <nav>
+    <a href="#about">關於我</a>
+    <a href="#skills">技能</a>
+    <a href="#profile">資料表</a>
+    <a href="#contact">聯絡我</a>
+  </nav>
 
-  <!-- h3：小區塊標題 -->
-  <h3>個人簡介</h3>
+  <!-- Main：主要內容區 -->
+  <main>
 
-  <!-- p：段落文字；br：換行 -->
-  <p>
-    大家好，我是美珠。<br>
-    歡迎來到我的個人網頁。<br>
-    我喜歡學習 HTML、網頁設計、活動企劃與創意製作。
-  </p>
+    <!-- h2：主要區塊標題 -->
+    <section id="about">
+      <h2>關於我</h2>
 
-  <!-- h4：更小的標題 -->
-  <h4>我的照片</h4>
+      <!-- h3：次標題 -->
+      <h3>個人簡介</h3>
 
-  <!-- img：圖片標籤 -->
-  <img 
-    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" 
-    alt="個人照片" 
-    width="250"
-  >
+      <!-- p 段落，br 換行 -->
+      <p>
+        大家好，我是美珠。<br>
+        這是一個使用 HTML 與 CSS 製作的個人網頁。<br>
+        我正在學習網頁設計，希望能製作出漂亮又實用的網站。
+      </p>
 
-  <!-- h5：第五層標題 -->
-  <h5>我的網站連結</h5>
+      <!-- img 圖片標籤 -->
+      <img
+        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+        alt="個人形象照片"
+      >
 
-  <!-- a：超連結 -->
-  <p>
-    你可以點選這裡：
-    <a href="https://www.google.com" target="_blank">前往 Google</a>
-  </p>
+      <!-- h4：小標題 -->
+      <h4>學習方向</h4>
+      <p>
+        我目前正在練習 HTML 標籤、CSS 排版與基本網頁結構。
+      </p>
 
-  <!-- h6：最小標題 -->
-  <h6>以上是我的基本介紹</h6>
+      <!-- h5：更小層級標題 -->
+      <h5>推薦網站</h5>
+      <p>
+        學習資源：
+        <a href="https://www.w3schools.com" target="_blank">
+          W3Schools HTML 教學
+        </a>
+      </p>
 
-  <hr>
+      <!-- h6：最小標題 -->
+      <h6>這是 h6 最小標題示範</h6>
+    </section>
 
-  <!-- dir：清單標籤，較舊式寫法 -->
-  <h2>我的技能</h2>
-  <dir>
-    <li>HTML 網頁結構</li>
-    <li>CSS 網頁美化</li>
-    <li>JavaScript 基礎互動</li>
-    <li>海報與簡報設計</li>
-  </dir>
+    <!-- dir：舊式清單標籤 -->
+    <section id="skills">
+      <h2>我的技能</h2>
 
-  <hr>
+      <p>以下使用 dir 標籤建立技能清單：</p>
 
-  <!-- table：表格 -->
-  <h2>個人資料表</h2>
+      <dir>
+        <li>HTML 網頁結構設計</li>
+        <li>CSS 視覺排版</li>
+        <li>JavaScript 基礎互動</li>
+        <li>活動海報與簡報製作</li>
+      </dir>
+    </section>
 
-  <table border="1" cellpadding="10">
-    <tr>
-      <th>項目</th>
-      <th>內容</th>
-    </tr>
+    <!-- table：表格 -->
+    <section id="profile">
+      <h2>個人資料表</h2>
 
-    <tr>
-      <td>姓名</td>
-      <td>美珠</td>
-    </tr>
+      <table>
+        <tr>
+          <th>欄位</th>
+          <th>內容</th>
+        </tr>
 
-    <tr>
-      <td>興趣</td>
-      <td>網頁設計、活動企劃、創意手作</td>
-    </tr>
+        <tr>
+          <td>姓名</td>
+          <td>美珠</td>
+        </tr>
 
-    <tr>
-      <td>學習目標</td>
-      <td>完成自己的第一個個人網站</td>
-    </tr>
-  </table>
+        <tr>
+          <td>興趣</td>
+          <td>網頁設計、創意手作、活動企劃</td>
+        </tr>
 
-  <hr>
+        <tr>
+          <td>學習目標</td>
+          <td>完成可上線的個人網站</td>
+        </tr>
 
-  <!-- form：表單 -->
-  <h2>聯絡我</h2>
+        <tr>
+          <td>使用技術</td>
+          <td>HTML、CSS、JavaScript</td>
+        </tr>
+      </table>
+    </section>
 
-  <form>
-    <p>
-      姓名：<br>
-      <input type="text" name="name" placeholder="請輸入姓名">
-    </p>
+    <!-- form：表單 -->
+    <section id="contact">
+      <h2>聯絡我</h2>
 
-    <p>
-      Email：<br>
-      <input type="email" name="email" placeholder="請輸入 Email">
-    </p>
+      <form action="#" method="post">
+        <p>
+          <label for="name">姓名：</label><br>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="請輸入姓名"
+            required
+          >
+        </p>
 
-    <p>
-      留言內容：<br>
-      <textarea name="message" rows="5" cols="30" placeholder="請輸入留言"></textarea>
-    </p>
+        <p>
+          <label for="email">Email：</label><br>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="請輸入 Email"
+            required
+          >
+        </p>
 
-    <input type="submit" value="送出">
-    <input type="reset" value="清除">
-  </form>
+        <p>
+          <label for="message">留言內容：</label><br>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="請輸入留言"
+          ></textarea>
+        </p>
+
+        <input type="submit" value="送出">
+        <input type="reset" value="清除">
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer：網站頁尾 -->
+  <footer>
+    <p>© 2026 我的個人網頁 All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
